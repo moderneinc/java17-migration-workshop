@@ -49,7 +49,13 @@ export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
 
 ## Configure the repository example
 
-1. Switch to Java 8 (or the JDK required to build your repository) so you can properly build this repository. 
+1. Clone this repository
+
+````shell
+git clone https://github.com/moderneinc/java17-migration-workshop
+```
+
+2. Switch to Java 8 (or the JDK required to build your repository) so you can properly build this repository. 
 You might need to download Java 8 and update your `JAVA_HOME` environment variable. If you are
 on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
@@ -92,16 +98,16 @@ mvn package -DskipTests
 mod build
 ```
 
-2. Now, switch to Java 17 to run recipes. This is a requirement of the CLI daemon.
+2. Now, switch to Java 17 to run recipes. This a Moderne CLI requirement.
 
 ```shell
 export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 ```
  
-3. Now it is time to migrate to Java 17. Use the following command from the `spring-petclinic` repository:
+3. Now it is time to migrate to Java 17. Use the following command from the `example` folder:
 
 ```shell
-mod run --recipeName org.openrewrite.java.migrate.UpgradeToJava17 --recipeGAVs org.openrewrite.recipe:rewrite-migrate-java --skipBuild
+mod run --recipeName org.openrewrite.java.migrate.UpgradeToJava17 --recipeGAVs org.openrewrite.recipe:rewrite-migrate-java --skipBuild --skipAnalytics
 ```
 
 4. The previous command should have updates your source files. You can then see the changes made by running:
