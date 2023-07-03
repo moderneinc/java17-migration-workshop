@@ -47,7 +47,7 @@ export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
 
 1. Clone this repository
 
-````shell
+```shell
 git clone https://github.com/moderneinc/java17-migration-workshop
 ```
 
