@@ -5,10 +5,6 @@ CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that allows
 developers to run OpenRewrite recipes without configuring any build plugin, to
 migrate a repository to Java 17.
 
-Afterwards, you'll use the CLI to publish your own OSS repository to the Moderne
-platform so that you can run recipes on it without having to build it over and
-over.
-
 ## Prepare your environment
 
 1. Go to the [Moderne platform](https://app.moderne.io) and sign in.
