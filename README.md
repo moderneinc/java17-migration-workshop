@@ -1,4 +1,4 @@
-# Moderne CLI 
+# Use the CLI to Migrate to Java 17 
 
 In this adventure, you will use the [Moderne
 CLI](https://docs.moderne.io/moderne-cli/cli-intro), a free tool that allows
@@ -11,17 +11,45 @@ over.
 
 ## Prepare your environment
 
-1. Create a Moderne Access Token by going to
-   [https://app.moderne.io/settings/access-token](https://app.moderne.io/settings/access-token).
-   Once there, enter a name for the token and press `generate`.
+1. Go to the [Moderne platform](https://app.moderne.io) and sign in.
 
-3. Export your token as an envorinment variable
+2. Click on the `?` in the top right corner and then select `Moderne CLI` from
+   the `Tools` menu:
+
+   ![CLI download](assets/cli-download.png)
+
+3. You can then either press the `Download Latest` button or install it directly
+   through the command line by copying the `curl` command at the bottom of the
+   modal:
+
+   ![](assets/cli-download2.png)
+
+4. Regardless of how you downloaded the CLI, you'll need to save it somewhere
+   that your terminal can access. This could involve updating your `PATH` to
+   point to a specific location or this could involve putting it in a directory
+   that's already on your `PATH` such as a `/usr/bin` directory.
+
+5. Ensure you can run the CLI by typing `mod help`. If everything is set up
+   correctly, you should see a list of commands:
+
+   ![](assets/mod-cli.png)
+
+6. Before you can run any commands, you'll need to create a Moderne Access
+   Token. Go to
+   [https://app.moderne.io/settings/access-token](https://app.moderne.io/settings/access-token),
+   enter a name for the token, and press `generate`.
+
+7. Once created, you should see a command that you can run to install the token
+   on your system. Either run that command or export your token directly as an
+   environment variable:
 
 ```shell
 export MODERNE_ACCESS_TOKEN="mat-YOUR_TOKEN_HERE"
 ```
 
-4. Switch to Java 8 (or the JDK required to build your repository) so you can properly build this repository. 
+## Configure the repository example
+
+1. Switch to Java 8 (or the JDK required to build your repository) so you can properly build this repository. 
 You might need to download Java 8 and update your `JAVA_HOME` environment variable. If you are
 on a Unix-based system, we recommend using [SDKMan](https://sdkman.io/):
 
@@ -44,13 +72,13 @@ If you are in a MacOS, you have an utility to list the existing JVMs running:
 /usr/libexec/java_home -V
 ```
 
-6. Clone your repository. In this example we will use an example repository
+2. Clone this repository. In this example we will use an example repository
 
 ```shell
 cd example
 ```
 
-8. Ìt requires Maven. Please, make sure it runs on your machine:
+3. Ìt requires Maven. Please, make sure it runs on your machine:
 
 ```shell
 mvn package -DskipTests
