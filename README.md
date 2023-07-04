@@ -91,7 +91,7 @@ mvn package -DskipTests
 1. Run the build command to generate the repository LST
 
 ```shell
-mod build
+mod build --Xmx=1G --verbose
 ```
 
 2. Now, switch to Java 17 to run recipes. This a Moderne CLI requirement.
