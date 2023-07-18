@@ -91,7 +91,7 @@ mvn package -DskipTests
 1. Run the build command to generate the repository LST
 
 ```shell
-mod build --Xmx=1G --verbose
+mod build 
 ```
 
 2. Now, switch to Java 17 to run recipes. This a Moderne CLI requirement.
@@ -103,7 +103,7 @@ export JAVA_HOME=REPLACE_FOR_LOCATION_OF_JAVA_17
 3. Now it is time to migrate to Java 17. Use the following command from the `example` folder:
 
 ```shell
-mod run --recipeName org.openrewrite.java.migrate.UpgradeToJava17 --recipeGAVs org.openrewrite.recipe:rewrite-migrate-java --skipBuild --skipAnalytics
+mod run --recipeName org.openrewrite.java.migrate.UpgradeToJava17 --recipeGAVs org.openrewrite.recipe:rewrite-migrate-java:2.0.6 --skipBuild --skipAnalytics
 ```
 
 4. The previous command should have updates your source files. You can then see the changes made by running:
